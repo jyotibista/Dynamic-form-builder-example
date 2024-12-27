@@ -8,6 +8,5 @@
     },
     "jsx": "react-jsx",
     "esModuleInterop": true,
-    "moduleResolution": "node16",
   }
 }

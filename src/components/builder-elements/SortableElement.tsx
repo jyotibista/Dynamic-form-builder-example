@@ -1,12 +1,14 @@
 import React from 'react';
+import { Edit, GripVertical, Trash2 } from 'lucide-react';
+
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button';
+
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+
 import { FormElement } from '@/types/formBuilder';
 
-
-import { Edit, GripVertical, Trash2 } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Card, CardContent } from '../ui/card';
 
 
 interface SortableElementProps {

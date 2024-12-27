@@ -1,7 +1,10 @@
 import React from "react";
-import FormBuilder from "./components/builder-elements/FormBuilder";
+
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+
+import FormBuilder from "./components/builder-elements/FormBuilder";
+
 
 export default function App() {
   return (

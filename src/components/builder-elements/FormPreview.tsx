@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react'
+import { toast } from 'react-toastify'
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -8,9 +10,11 @@ import { Slider } from '@/components/ui/slider'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+
 import { FormElement, Layout } from '@/types/formBuilder'
+
 import { getGridClass } from '@/helpers/helper'
-import { toast } from 'react-toastify'
+import { log } from 'console'
 
 
 interface FormPreviewProps {
@@ -45,7 +49,7 @@ export default function FormPreview({ elements, layout }: FormPreviewProps) {
         setErrors(newErrors)
         if (Object.keys(newErrors).length === 0) {
             console.log('Form submitted:', formData)
-            toast.success('Form submitted successfully!')
+            toast.success(`Form submitted successfully! ${JSON.stringify(formData)}`)
         }
     }
 
@@ -122,7 +126,7 @@ export default function FormPreview({ elements, layout }: FormPreviewProps) {
                     >
                         {element.options?.map((option) => (
                             <div className="flex items-center space-x-2" key={option.value}>
-                                <RadioGroupItem value={option.value} id={`${element.id}-${option.value}`} />
+                                <RadioGroupItem value={option.value} id={`${element.id}-${option.value}`} checked={formData[element.id] as string === option.value as string} />
                                 <Label htmlFor={`${element.id}-${option.value}`}>{option.label}</Label>
                             </div>
                         ))}

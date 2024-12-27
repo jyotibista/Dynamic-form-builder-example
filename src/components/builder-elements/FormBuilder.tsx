@@ -1,18 +1,22 @@
 'use client'
 
 import React, { useState, useCallback } from 'react'
+
 import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { PlusCircle, LayoutGrid, Eye, Code, GripVertical, Trash2, Edit } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+
+import { PlusCircle, LayoutGrid, Eye, Code } from 'lucide-react'
+
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy, useSortable } from "@dnd-kit/sortable";
+
+import { ElementType, FormElement, Layout } from '@/types/formBuilder'
+
+import SortableElement from './SortableElement'
 import FormPreview from './FormPreview'
 import CodeGenerator from './CodeGenerator'
 import ElementEditor from './ElementEditor'
-import { ElementType, FormElement, Layout } from '@/types/formBuilder'
-import SortableElement from './SortableElement'
 
 const initialElements: FormElement[] = [
     { id: 'input-1684761600000', type: 'text', label: 'Name', required: true },
