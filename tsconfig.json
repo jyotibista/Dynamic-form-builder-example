@@ -2,11 +2,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     "jsx": "react-jsx",
     "esModuleInterop": true,
+    "module": "ES2015",
+    "moduleResolution": "Bundler"
   }
 }
